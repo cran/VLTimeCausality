@@ -232,11 +232,6 @@ hr {
 <pre><code>## Loading required package: tseries
 </code></pre>
 
-<pre><code>## Registered S3 method overwritten by &#39;xts&#39;:
-##   method     from
-##   as.zoo.xts zoo
-</code></pre>
-
 <pre><code>## Registered S3 method overwritten by &#39;quantmod&#39;:
 ##   method            from
 ##   as.zoo.data.frame zoo
@@ -246,8 +241,6 @@ hr {
 </code></pre>
 
 <pre><code class="r"># Generate simulation data
-TS &lt;- VLTimeCausality::SimpleSimulationVLtimeseries()
-# Generate simulation data
 TS &lt;- VLTimeCausality::SimpleSimulationVLtimeseries()
 # Run the function
 out&lt;-VLTimeCausality::GrangerFunc(Y=TS$Y,X=TS$X,alpha=0.05)
@@ -269,15 +262,13 @@ print(sprintf(&quot;F-TEST p-value = %f&quot;,out$p.val))
 <pre><code class="r">library(VLTimeCausality)
 # Generate simulation data
 TS &lt;- VLTimeCausality::SimpleSimulationVLtimeseries()
-# Generate simulation data
-TS &lt;- VLTimeCausality::SimpleSimulationVLtimeseries()
 # Run the function
 out&lt;-VLTimeCausality::VLGrangerFunc(Y=TS$Y,X=TS$X,gamma=0.5)
 #result
 print(sprintf(&quot;BICDiffRatio = %f&quot;,out$BICDiffRatio))
 </code></pre>
 
-<pre><code>## [1] &quot;BICDiffRatio = 0.899859&quot;
+<pre><code>## [1] &quot;BICDiffRatio = 0.803389&quot;
 </code></pre>
 
 <pre><code class="r">print(sprintf(&quot;X causes Y? %d&quot;,out$XgCsY))
@@ -291,15 +282,13 @@ print(sprintf(&quot;BICDiffRatio = %f&quot;,out$BICDiffRatio))
 <pre><code class="r">library(VLTimeCausality)
 # Generate simulation data
 TS &lt;- VLTimeCausality::SimpleSimulationVLtimeseries()
-# Generate simulation data
-TS &lt;- VLTimeCausality::SimpleSimulationVLtimeseries()
 # Run the function
 out&lt;-VLTimeCausality::VLTransferEntropy(Y=TS$Y,X=TS$X,VLflag=FALSE)
 #result
 print(sprintf(&quot;TEratio = %f&quot;,out$TEratio))
 </code></pre>
 
-<pre><code>## [1] &quot;TEratio = 2.670616&quot;
+<pre><code>## [1] &quot;TEratio = 1.476073&quot;
 </code></pre>
 
 <pre><code class="r">print(sprintf(&quot;X causes Y? %d&quot;,out$XgCsY_trns) )
@@ -313,15 +302,13 @@ print(sprintf(&quot;TEratio = %f&quot;,out$TEratio))
 <pre><code class="r">library(VLTimeCausality)
 # Generate simulation data
 TS &lt;- VLTimeCausality::SimpleSimulationVLtimeseries()
-# Generate simulation data
-TS &lt;- VLTimeCausality::SimpleSimulationVLtimeseries()
 # Run the function
 out&lt;-VLTimeCausality::VLTransferEntropy(Y=TS$Y,X=TS$X,VLflag=TRUE)
 #result
 print(sprintf(&quot;TEratio = %f&quot;,out$TEratio))
 </code></pre>
 
-<pre><code>## [1] &quot;TEratio = 8.452612&quot;
+<pre><code>## [1] &quot;TEratio = 3.961960&quot;
 </code></pre>
 
 <pre><code class="r">print(sprintf(&quot;X causes Y? %d&quot;,out$XgCsY_trns) )

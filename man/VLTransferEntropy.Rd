@@ -12,7 +12,8 @@ VLTransferEntropy(
   lx = 1,
   ly = 1,
   VLflag = TRUE,
-  autoLagflag = TRUE
+  autoLagflag = TRUE,
+  alpha = 0.05
 )
 }
 \arguments{
@@ -31,6 +32,8 @@ VLTransferEntropy(
 \item{autoLagflag}{is a flag for enabling the automatic lag inference function. The default is true.
 If it is set to be true, then maxLag is set automatically using cross-correlation.
 Otherwise, if it is set to be false, then the function takes the maxLag value to infer Granger causality.}
+
+\item{alpha}{is a significant-level threshold for TE bootstrapping by Dimpfl and Peter (2013).}
 }
 \value{
 This function returns of  whether \code{X} (VL-)Transfer-Entropy-causes \code{Y}.
@@ -39,7 +42,9 @@ This function returns of  whether \code{X} (VL-)Transfer-Entropy-causes \code{Y}
 \item{TEratio}{ is a Transfer Entropy ratio. If it is greater than one , then \code{X} causes \code{Y}. }
 \item{res}{ is an object of output from RTransferEntropy::transfer_entropy() }
 \item{follOut}{ is a list of variables from function \code{followingRelation}. }
-\item{XgCsY_trns}{The flag is true if \code{X} (VL-)Transfer-Entropy-causes \code{Y} using Transfer Entropy ratio ratio where \code{TEratio >1} if \code{X} causes \code{Y}.}
+\item{XgCsY_trns}{The flag is true if \code{X} (VL-)Transfer-Entropy-causes \code{Y} using Transfer Entropy ratio ratio where \code{TEratio >1}
+if \code{X} causes \code{Y}. Additionally, if \code{nboot>1}, the flag is true only when \code{pval<=alpha}. }
+\item{pval}{ It is a p-value for TE bootstrapping by Dimpfl and Peter (2013).}
 }
 \description{
 VLTransferEntropy is a Variable-lag Transfer Entropy function. It tests whether \code{X} VL-Transfer-Entropy-causes \code{Y}.
