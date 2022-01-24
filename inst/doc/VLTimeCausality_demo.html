@@ -268,7 +268,7 @@ out&lt;-VLTimeCausality::VLGrangerFunc(Y=TS$Y,X=TS$X,gamma=0.5)
 print(sprintf(&quot;BICDiffRatio = %f&quot;,out$BICDiffRatio))
 </code></pre>
 
-<pre><code>## [1] &quot;BICDiffRatio = 0.789347&quot;
+<pre><code>## [1] &quot;BICDiffRatio = 0.914738&quot;
 </code></pre>
 
 <pre><code class="r">print(sprintf(&quot;X causes Y? %d&quot;,out$XgCsY))
@@ -288,7 +288,7 @@ out&lt;-VLTimeCausality::VLTransferEntropy(Y=TS$Y,X=TS$X,VLflag=FALSE)
 print(sprintf(&quot;TEratio = %f&quot;,out$TEratio))
 </code></pre>
 
-<pre><code>## [1] &quot;TEratio = 1.947516&quot;
+<pre><code>## [1] &quot;TEratio = 2.205936&quot;
 </code></pre>
 
 <pre><code class="r">print(sprintf(&quot;X causes Y? %d&quot;,out$XgCsY_trns) )
@@ -308,7 +308,7 @@ out&lt;-VLTimeCausality::VLTransferEntropy(Y=TS$Y,X=TS$X,VLflag=TRUE)
 print(sprintf(&quot;TEratio = %f&quot;,out$TEratio))
 </code></pre>
 
-<pre><code>## [1] &quot;TEratio = 2.419394&quot;
+<pre><code>## [1] &quot;TEratio = 4.622263&quot;
 </code></pre>
 
 <pre><code class="r">print(sprintf(&quot;X causes Y? %d&quot;,out$XgCsY_trns) )
